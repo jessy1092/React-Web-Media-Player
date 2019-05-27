@@ -43,6 +43,9 @@ var Container = (_temp = _class = function (_Component) {
 
     this.componentWillUnmount = function () {
         fscreen.removeEventListener("fullscreenchange", _this2.detectFullScreen.bind(_this2));
+        if (_this2.mouseStopTimer) {
+            window.clearTimeout(_this2.mouseStopTimer);
+        }
     };
 
     this.componentDidUpdate = function (prevProps) {
